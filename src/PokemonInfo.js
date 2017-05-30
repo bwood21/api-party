@@ -34,8 +34,8 @@ class PokemonInfo extends Component {
       <div className="pokemon-pokemon">
         {/*<img src={pokemon.avatar_url} alt="pokemon"/>*/}
         
-        <h3>ID: {pokemon.followers}</h3>
-        <h3>Name: {pokemon.following}</h3>
+        <h3>ID: {pokemon.id}</h3>
+        <h3>Name: {pokemon.name}</h3>
         {/*<h3>location: {pokemon.location}</h3>*/}
       </div>
     )
