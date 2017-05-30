@@ -38,7 +38,7 @@ class Pokemon extends Component {
         <Route exact path='/pokemon' render={() => (
           <h3>Please enter a pokemon to search</h3> 
         )} />
-        <Route path='/pokemon/:pokename' component={PokemonInfo} />
+        <Route path='/pokemon/:pokenumber' component={PokemonInfo} />
       </div>
     )
   }

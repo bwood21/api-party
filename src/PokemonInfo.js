@@ -3,12 +3,10 @@ import React, { Component } from 'react'
 class PokemonInfo extends Component {
   state = {
     pokemon: {
-      avatar_url: '',
-      login: '',
-      followers: '',
-      following: '',
-      location: '',
-      html_url: ''
+      id:'',
+      name:'',
+      
+
     }
   }
   
@@ -17,10 +15,10 @@ class PokemonInfo extends Component {
     this.fetchpokeData(props)
   }
 
-  fetchpokerData(props) {
-    fetch(`https://api.github.com/users/${props.match.params.username}`)
+  fetchpokeData(props) {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${props.match.params.pokenumber}`)
       .then(response => response.json())
-      .then(user => this.setState({ user }))
+      .then(pokemon => this.setState({ pokemon }))
   }
 
   componentWillReceiveProps(nextProps) {
@@ -33,12 +31,12 @@ class PokemonInfo extends Component {
   render() {
     const { pokemon } = this.state
     return (
-      <div className="github-user">
-        <img src={pokemon.avatar_url} alt="user"/>
-        <h2>{pokemon.login}</h2>
-        <h3>followers: {pokemon.followers}</h3>
-        <h3>following: {pokemon.following}</h3>
-        <h3>location: {pokemon.location}</h3>
+      <div className="pokemon-pokemon">
+        {/*<img src={pokemon.avatar_url} alt="pokemon"/>*/}
+        
+        <h3>ID: {pokemon.followers}</h3>
+        <h3>Name: {pokemon.following}</h3>
+        {/*<h3>location: {pokemon.location}</h3>*/}
       </div>
     )
   }
